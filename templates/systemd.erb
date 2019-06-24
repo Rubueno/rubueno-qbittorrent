@@ -1,0 +1,14 @@
+[Unit]
+Description=<%= @service_name %> Daemon
+After=syslog.target network.target
+
+[Service]
+User=<%= @user %>
+Group=<%= @group %>
+Type=simple
+ExecStart=<%= @executable %>
+TimeoutStopSec=20
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
